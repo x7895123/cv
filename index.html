@@ -1,532 +1,651 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Шевченко Владимир — AI / ML Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #212123;
-    --bg-card: rgba(20, 25, 38, 0.5);
-    --bg-card-hover: rgba(15, 22, 40, 0.92);
-    --cyan: #00f0ff;
-    --cyan-dim: rgba(0, 240, 255, 0.5);
-    --cyan-ghost: rgba(0, 240, 255, 0.08);
-    --magenta: #ff00aa;
-    --magenta-dim: rgba(255, 0, 170, 0.4);
-    --magenta-ghost: rgba(255, 0, 170, 0.06);
-    --green: #00ff88;
-    --green-dim: rgba(0, 255, 136, 0.4);
-    --yellow: #f0e040;
-    --text: #c8d0e0;
-    --text-bright: #e8eef8;
-    --text-muted: #5a6580;
-    --border: rgba(0, 240, 255, 0.12);
-    --border-bright: rgba(0, 240, 255, 0.3);
-    --heading: 'Orbitron', 'Courier New', monospace;
-    --mono: 'Share Tech Mono', 'Courier New', monospace;
-    --body: 'Exo 2', 'Segoe UI', sans-serif;
-    --glow-cyan: 0 0 20px rgba(0, 240, 255, 0.15), 0 0 60px rgba(0, 240, 255, 0.05);
-    --glow-magenta: 0 0 20px rgba(255, 0, 170, 0.15), 0 0 60px rgba(255, 0, 170, 0.05);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шевченко Владимир — AI / ML Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --bg: #212123;
+            --bg-card: rgba(20, 25, 38, 0.5);
+            --bg-card-hover: rgba(15, 22, 40, 0.92);
+            --cyan: #00f0ff;
+            --cyan-dim: rgba(0, 240, 255, 0.5);
+            --cyan-ghost: rgba(0, 240, 255, 0.08);
+            --magenta: #ff00aa;
+            --magenta-dim: rgba(255, 0, 170, 0.4);
+            --magenta-ghost: rgba(255, 0, 170, 0.06);
+            --green: #00ff88;
+            --green-dim: rgba(0, 255, 136, 0.4);
+            --yellow: #f0e040;
+            --text: #c8d0e0;
+            --text-bright: #e8eef8;
+            --text-muted: #5a6580;
+            --border: rgba(0, 240, 255, 0.12);
+            --border-bright: rgba(0, 240, 255, 0.3);
+            --heading: 'Orbitron', 'Courier New', monospace;
+            --mono: 'Share Tech Mono', 'Courier New', monospace;
+            --body: 'Exo 2', 'Segoe UI', sans-serif;
+            --glow-cyan: 0 0 20px rgba(0, 240, 255, 0.15), 0 0 60px rgba(0, 240, 255, 0.05);
+            --glow-magenta: 0 0 20px rgba(255, 0, 170, 0.15), 0 0 60px rgba(255, 0, 170, 0.05);
+        }
 
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  body {
-    font-family: var(--body);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.65;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
+        body {
+            font-family: var(--body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  /* ========== GRID BACKGROUND ========== */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background:
-      linear-gradient(rgba(0,240,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,240,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
+        /* ========== GRID BACKGROUND ========== */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
 
-  /* Scanline overlay */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.03) 2px,
-      rgba(0, 0, 0, 0.03) 4px
-    );
-  }
+        /* Scanline overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 0, 0, 0.03) 2px,
+                    rgba(0, 0, 0, 0.03) 4px
+            );
+        }
 
-  /* ========== FLOATING FORMULAS ========== */
-  .formulas-canvas {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden;
-  }
+        /* ========== FLOATING FORMULAS ========== */
+        .formulas-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
 
-  .formula {
-    position: absolute;
-    font-family: var(--mono);
-    white-space: nowrap;
-    user-select: none;
-    will-change: transform, opacity;
-    animation: drift linear infinite;
-    text-shadow: 0 0 8px var(--glow-color);
-  }
+        .formula {
+            position: absolute;
+            font-family: var(--mono);
+            white-space: nowrap;
+            user-select: none;
+            will-change: transform, opacity;
+            animation: drift linear infinite;
+            text-shadow: 0 0 8px var(--glow-color);
+        }
 
-  .formula.cyan-f { color: rgba(0, 240, 255, 0.13); --glow-color: rgba(0, 240, 255, 0.1); }
-  .formula.magenta-f { color: rgba(255, 0, 170, 0.10); --glow-color: rgba(255, 0, 170, 0.08); }
-  .formula.green-f { color: rgba(0, 255, 136, 0.09); --glow-color: rgba(0, 255, 136, 0.07); }
+        .formula.cyan-f {
+            color: rgba(0, 240, 255, 0.13);
+            --glow-color: rgba(0, 240, 255, 0.1);
+        }
 
-  @keyframes drift {
-    0% { transform: translateY(0) translateX(0) rotate(var(--rot-start)); opacity: 0; }
-    4% { opacity: 1; }
-    96% { opacity: 1; }
-    100% { transform: translateY(calc(-100vh - 150px)) translateX(var(--drift-x)) rotate(var(--rot-end)); opacity: 0; }
-  }
+        .formula.magenta-f {
+            color: rgba(255, 0, 170, 0.10);
+            --glow-color: rgba(255, 0, 170, 0.08);
+        }
 
-  /* ========== PAGE STRUCTURE ========== */
-  .page-wrapper {
-    position: relative;
-    z-index: 2;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 50px 40px 80px;
-  }
+        .formula.green-f {
+            color: rgba(0, 255, 136, 0.09);
+            --glow-color: rgba(0, 255, 136, 0.07);
+        }
 
-  /* ========== HEADER ========== */
-  .cv-header {
-    text-align: center;
-    padding-bottom: 44px;
-    margin-bottom: 52px;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-  }
+        @keyframes drift {
+            0% {
+                transform: translateY(0) translateX(0) rotate(var(--rot-start));
+                opacity: 0;
+            }
+            4% {
+                opacity: 1;
+            }
+            96% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(-100vh - 150px)) translateX(var(--drift-x)) rotate(var(--rot-end));
+                opacity: 0;
+            }
+        }
 
-  .cv-header::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--cyan), var(--magenta), transparent);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-  }
+        /* ========== PAGE STRUCTURE ========== */
+        .page-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 50px 40px 80px;
+        }
 
-  .header-tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 3px;
-    margin-bottom: 16px;
-    display: block;
-  }
-  .header-tag .br { color: var(--cyan-dim); }
+        /* ========== HEADER ========== */
+        .cv-header {
+            text-align: center;
+            padding-bottom: 44px;
+            margin-bottom: 52px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
 
-  .cv-name {
-    font-family: var(--heading);
-    font-size: 38px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: var(--text-bright);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-shadow: 0 0 30px rgba(0, 240, 255, 0.12);
-  }
+        .cv-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), var(--magenta), transparent);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
 
-  .cv-title {
-    font-family: var(--heading);
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: 24px;
-    text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-  }
+        .header-tag {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+            display: block;
+        }
 
-  .cv-contacts {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
+        .header-tag .br {
+            color: var(--cyan-dim);
+        }
 
-  .cv-contacts a, .cv-contacts span {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text-muted);
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: color 0.3s, text-shadow 0.3s;
-  }
+        .cv-name {
+            font-family: var(--heading);
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--text-bright);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.12);
+        }
 
-  .cv-contacts a:hover {
-    color: var(--cyan);
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
-  }
+        .cv-title {
+            font-family: var(--heading);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            margin-bottom: 24px;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
 
-  .cv-contacts .sep { color: rgba(255, 255, 255, 0.1); }
+        .cv-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
 
-  /* ========== PROFILE ========== */
-  .profile {
-    font-size: 15.5px;
-    line-height: 1.8;
-    color: var(--text);
-    max-width: 700px;
-    margin: 0 auto 56px;
-    text-align: center;
-    font-weight: 300;
-    padding: 28px 32px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    position: relative;
-  }
+        .cv-contacts a, .cv-contacts span {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
 
-  .profile::before {
-    content: '>';
-    position: absolute;
-    top: 28px;
-    left: 14px;
-    font-family: var(--mono);
-    color: var(--cyan-dim);
-    font-size: 14px;
-    animation: blink 1.2s step-end infinite;
-  }
+        .cv-contacts a:hover {
+            color: var(--cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+        }
 
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
+        .cv-contacts .sep {
+            color: rgba(255, 255, 255, 0.1);
+        }
 
-  /* ========== SECTIONS ========== */
-  .section {
-    margin-bottom: 52px;
-    animation: fadeUp 0.5s ease both;
-  }
+        /* ========== PROFILE ========== */
+        .profile {
+            font-size: 15.5px;
+            line-height: 1.8;
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto 56px;
+            text-align: center;
+            font-weight: 300;
+            padding: 28px 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            position: relative;
+        }
 
-  .section:nth-child(2) { animation-delay: 0.08s; }
-  .section:nth-child(3) { animation-delay: 0.12s; }
-  .section:nth-child(4) { animation-delay: 0.16s; }
-  .section:nth-child(5) { animation-delay: 0.20s; }
-  .section:nth-child(6) { animation-delay: 0.24s; }
+        .profile::before {
+            content: '>';
+            position: absolute;
+            top: 28px;
+            left: 14px;
+            font-family: var(--mono);
+            color: var(--cyan-dim);
+            font-size: 14px;
+            animation: blink 1.2s step-end infinite;
+        }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
 
-  .section-title {
-    font-family: var(--heading);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 24px;
-    position: relative;
-    text-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-  }
+        /* ========== SECTIONS ========== */
+        .section {
+            margin-bottom: 52px;
+            animation: fadeUp 0.5s ease both;
+        }
 
-  .section-title::before {
-    content: '//';
-    margin-right: 10px;
-    color: var(--magenta-dim);
-    font-weight: 400;
-  }
+        .section:nth-child(2) {
+            animation-delay: 0.08s;
+        }
 
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    background: var(--cyan);
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-  }
+        .section:nth-child(3) {
+            animation-delay: 0.12s;
+        }
 
-  /* ========== SKILLS GRID ========== */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+        .section:nth-child(4) {
+            animation-delay: 0.16s;
+        }
 
-  .skill-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 22px 24px;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
+        .section:nth-child(5) {
+            animation-delay: 0.20s;
+        }
 
-  .skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--cyan), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
+        .section:nth-child(6) {
+            animation-delay: 0.24s;
+        }
 
-  .skill-card:hover {
-    border-color: var(--border-bright);
-    background: var(--bg-card-hover);
-    box-shadow: var(--glow-cyan);
-  }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .skill-card:hover::before { opacity: 1; }
+        .section-title {
+            font-family: var(--heading);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+            position: relative;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+        }
 
-  .skill-card:nth-child(even)::before {
-    background: linear-gradient(180deg, var(--magenta-dim), transparent);
-  }
-  .skill-card:nth-child(even):hover {
-    box-shadow: var(--glow-magenta);
-    border-color: rgba(255, 0, 170, 0.2);
-  }
+        .section-title::before {
+            content: '//';
+            margin-right: 10px;
+            color: var(--magenta-dim);
+            font-weight: 400;
+        }
 
-  .skill-card-wide { grid-column: 1 / -1; }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
 
-  .skill-card-label {
-    font-family: var(--heading);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+        /* ========== SKILLS GRID ========== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
 
-  .skill-card:nth-child(even) .skill-card-label { color: var(--magenta); }
-  .skill-card:nth-child(5) .skill-card-label { color: var(--green); }
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 22px 24px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
 
-  .skill-card-label::before {
-    content: '◈';
-    font-size: 8px;
-    opacity: 0.6;
-  }
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--cyan), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
 
-  .skill-card ul { list-style: none; padding: 0; }
+        .skill-card:hover {
+            border-color: var(--border-bright);
+            background: var(--bg-card-hover);
+            box-shadow: var(--glow-cyan);
+        }
 
-  .skill-card li {
-    font-size: 13.5px;
-    color: var(--text);
-    line-height: 1.75;
-    padding: 2px 0 2px 16px;
-    position: relative;
-    font-weight: 300;
-  }
+        .skill-card:hover::before {
+            opacity: 1;
+        }
 
-  .skill-card li::before {
-    content: '›';
-    position: absolute;
-    left: 0;
-    color: var(--text-muted);
-    font-family: var(--mono);
-    font-size: 14px;
-  }
+        .skill-card:nth-child(even)::before {
+            background: linear-gradient(180deg, var(--magenta-dim), transparent);
+        }
 
-  .skill-tag {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    padding: 1px 7px;
-    border-radius: 2px;
-    margin: 1px 2px;
-    border: 1px solid;
-  }
+        .skill-card:nth-child(even):hover {
+            box-shadow: var(--glow-magenta);
+            border-color: rgba(255, 0, 170, 0.2);
+        }
 
-  .skill-card:nth-child(odd) .skill-tag {
-    color: var(--cyan);
-    background: var(--cyan-ghost);
-    border-color: rgba(0, 240, 255, 0.15);
-  }
-  .skill-card:nth-child(even) .skill-tag {
-    color: var(--magenta);
-    background: var(--magenta-ghost);
-    border-color: rgba(255, 0, 170, 0.15);
-  }
-  .skill-card:nth-child(5) .skill-tag {
-    color: var(--green);
-    background: rgba(0,255,136,0.06);
-    border-color: rgba(0,255,136,0.15);
-  }
+        .skill-card-wide {
+            grid-column: 1 / -1;
+        }
 
-  /* ========== EXPERIENCE ========== */
-  .exp-item {
-    margin-bottom: 30px;
-    padding-left: 22px;
-    border-left: 2px solid rgba(255, 255, 255, 0.05);
-    transition: border-color 0.3s;
-    position: relative;
-  }
+        .skill-card-label {
+            font-family: var(--heading);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-  .exp-item::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 8px;
-    width: 8px;
-    height: 8px;
-    border: 2px solid var(--cyan-dim);
-    border-radius: 50%;
-    background: var(--bg);
-    transition: all 0.3s;
-  }
+        .skill-card:nth-child(even) .skill-card-label {
+            color: var(--magenta);
+        }
 
-  .exp-item:hover { border-left-color: var(--cyan-dim); }
-  .exp-item:hover::before {
-    border-color: var(--cyan);
-    box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-    background: var(--cyan-dim);
-  }
+        .skill-card:nth-child(5) .skill-card-label {
+            color: var(--green);
+        }
 
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
+        .skill-card-label::before {
+            content: '◈';
+            font-size: 8px;
+            opacity: 0.6;
+        }
 
-  .exp-title {
-    font-family: var(--body);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-bright);
-  }
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+        }
 
-  .exp-period {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    white-space: nowrap;
-    padding: 2px 10px;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 2px;
-  }
+        .skill-card li {
+            font-size: 13.5px;
+            color: var(--text);
+            line-height: 1.75;
+            padding: 2px 0 2px 16px;
+            position: relative;
+            font-weight: 300;
+        }
 
-  .exp-list { list-style: none; padding: 0; }
+        .skill-card li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+            font-family: var(--mono);
+            font-size: 14px;
+        }
 
-  .exp-list li {
-    font-size: 14px;
-    color: var(--text);
-    line-height: 1.75;
-    padding: 3px 0 3px 18px;
-    position: relative;
-    font-weight: 300;
-  }
+        .skill-tag {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11.5px;
+            padding: 1px 7px;
+            border-radius: 2px;
+            margin: 1px 2px;
+            border: 1px solid;
+        }
 
-  .exp-list li::before {
-    content: '';
-    position: absolute;
-    left: 2px;
-    top: 12px;
-    width: 5px;
-    height: 5px;
-    border: 1px solid var(--text-muted);
-    border-radius: 1px;
-    transform: rotate(45deg);
-  }
+        .skill-card:nth-child(odd) .skill-tag {
+            color: var(--cyan);
+            background: var(--cyan-ghost);
+            border-color: rgba(0, 240, 255, 0.15);
+        }
 
-  /* ========== EDUCATION & LICENSES ========== */
-  .edu-block { margin-bottom: 12px; }
+        .skill-card:nth-child(even) .skill-tag {
+            color: var(--magenta);
+            background: var(--magenta-ghost);
+            border-color: rgba(255, 0, 170, 0.15);
+        }
 
-  .edu-name {
-    font-family: var(--body);
-    font-size: 15.5px;
-    font-weight: 600;
-    color: var(--text-bright);
-  }
+        .skill-card:nth-child(5) .skill-tag {
+            color: var(--green);
+            background: rgba(0, 255, 136, 0.06);
+            border-color: rgba(0, 255, 136, 0.15);
+        }
 
-  .edu-detail {
-    font-size: 13.5px;
-    color: var(--text-muted);
-    font-style: italic;
-    font-weight: 300;
-  }
+        /* ========== EXPERIENCE ========== */
+        .exp-item {
+            margin-bottom: 30px;
+            padding-left: 22px;
+            border-left: 2px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s;
+            position: relative;
+        }
 
-  .license-list { list-style: none; padding: 0; }
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border: 2px solid var(--cyan-dim);
+            border-radius: 50%;
+            background: var(--bg);
+            transition: all 0.3s;
+        }
 
-  .license-list li {
-    font-size: 14px;
-    color: var(--text);
-    padding: 4px 0 4px 18px;
-    position: relative;
-    font-weight: 300;
-  }
+        .exp-item:hover {
+            border-left-color: var(--cyan-dim);
+        }
 
-  .license-list li::before {
-    content: '◆';
-    position: absolute;
-    left: 0;
-    font-size: 6px;
-    top: 10px;
-    color: var(--cyan-dim);
-  }
+        .exp-item:hover::before {
+            border-color: var(--cyan);
+            box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+            background: var(--cyan-dim);
+        }
 
-  /* ========== FOOTER ========== */
-  .cv-footer {
-    margin-top: 56px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-  }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
 
-  /* ========== RESPONSIVE ========== */
-  @media (max-width: 700px) {
-    .page-wrapper { padding: 28px 18px 60px; }
-    .cv-name { font-size: 24px; letter-spacing: 2px; }
-    .cv-title { font-size: 11px; letter-spacing: 4px; }
-    .skills-grid { grid-template-columns: 1fr; }
-    .exp-header { flex-direction: column; gap: 4px; }
-  }
+        .exp-title {
+            font-family: var(--body);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
 
-  @media print {
-    .formulas-canvas { display: none; }
-    body::before, body::after { display: none; }
-    .page-wrapper { max-width: 100%; padding: 20px; }
-    body { background: #fff; color: #111; }
-    .skill-card, .profile { background: #f5f5f5; border-color: #ddd; }
-    .cv-name, .exp-title, .edu-name { color: #111; }
-    .section-title, .cv-title, .skill-card-label { color: #333; text-shadow: none; }
-  }
-</style>
+        .exp-period {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            white-space: nowrap;
+            padding: 2px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 2px;
+        }
+
+        .exp-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-list li {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.75;
+            padding: 3px 0 3px 18px;
+            position: relative;
+            font-weight: 300;
+        }
+
+        .exp-list li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 12px;
+            width: 5px;
+            height: 5px;
+            border: 1px solid var(--text-muted);
+            border-radius: 1px;
+            transform: rotate(45deg);
+        }
+
+        /* ========== EDUCATION & LICENSES ========== */
+        .edu-block {
+            margin-bottom: 12px;
+        }
+
+        .edu-name {
+            font-family: var(--body);
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .edu-detail {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .license-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .license-list li {
+            font-size: 14px;
+            color: var(--text);
+            padding: 4px 0 4px 18px;
+            position: relative;
+            font-weight: 300;
+        }
+
+        .license-list li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            font-size: 6px;
+            top: 10px;
+            color: var(--cyan-dim);
+        }
+
+        /* ========== FOOTER ========== */
+        .cv-footer {
+            margin-top: 56px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 700px) {
+            .page-wrapper {
+                padding: 28px 18px 60px;
+            }
+
+            .cv-name {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+
+            .cv-title {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+
+        @media print {
+            .formulas-canvas {
+                display: none;
+            }
+
+            body::before, body::after {
+                display: none;
+            }
+
+            .page-wrapper {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            body {
+                background: #fff;
+                color: #111;
+            }
+
+            .skill-card, .profile {
+                background: #f5f5f5;
+                border-color: #ddd;
+            }
+
+            .cv-name, .exp-title, .edu-name {
+                color: #111;
+            }
+
+            .section-title, .cv-title, .skill-card-label {
+                color: #333;
+                text-shadow: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -536,239 +655,249 @@
 <!-- Main content -->
 <div class="page-wrapper">
 
-  <header class="cv-header">
-    <span class="header-tag"><span class="br">&lt;</span>candidate type="ai_engineer"<span class="br">/&gt;</span></span>
-    <h1 class="cv-name">Шевченко Владимир</h1>
-    <p class="cv-title">AI / ML Engineer</p>
-    <div class="cv-contacts">
-      <a href="mailto:vladimirsv@gmail.com">vladimirsv@gmail.com</a>
-      <span class="sep">|</span>
-      <span>+7 701 000 0684</span>
-      <span class="sep">|</span>
-      <span>Казахстан</span>
+    <header class="cv-header">
+        <span class="header-tag"><span class="br">&lt;</span>candidate type="ai_engineer"<span class="br">/&gt;</span></span>
+        <h1 class="cv-name">Шевченко Владимир</h1>
+        <p class="cv-title">AI / ML Engineer</p>
+        <div class="cv-contacts">
+            <a href="mailto:vladimirsv@gmail.com">vladimirsv@gmail.com</a>
+            <span class="sep">|</span>
+            <span>+7 701 000 0684</span>
+            <span class="sep">|</span>
+            <span>Казахстан</span>
+        </div>
+    </header>
+
+    <p class="profile">
+        Инженер с 20+ летним опытом в проектировании и автоматизации вычислительных систем.
+        В последние годы работаю на стыке разработки и машинного обучения: проектирую AI-сервисы,
+        строю мультиагентные системы, разворачиваю ML-модели в продакшен.
+        Привык вести проект целиком — от анализа задачи до эксплуатации в рабочей среде.
+    </p>
+
+    <!-- НАВЫКИ -->
+    <div class="section">
+        <h2 class="section-title">Навыки</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-card-label">AI и языковые модели</div>
+                <ul>
+                    <li>Мультиагентные системы: оркестрация, tool use, управление контекстом и ограничениями моделей</li>
+                    <li>Коммерческие API (<span class="skill-tag">OpenAI</span> <span class="skill-tag">Anthropic</span>) для сложных задач; локальный инференс
+                        через <span class="skill-tag">Ollama</span> и <span class="skill-tag">HuggingFace</span> — для экономии и задач с требованиями к
+                        конфиденциальности
+                    </li>
+                    <li>Agentic RAG на <span class="skill-tag">smolagents</span>, векторный поиск, prompt engineering</li>
+                    <li>Интеграция через <span class="skill-tag">LiteLLM</span> — единый интерфейс к разным провайдерам</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-label">ML и обработка речи</div>
+                <ul>
+                    <li>ASR: <span class="skill-tag">faster-whisper</span>, VAD-фильтрация, мультиязычная транскрибация</li>
+                    <li>TTS с клонированием голоса по образцу</li>
+                    <li>Собственный мульти-GPU сервер для инференса; все модели обёрнуты в <span class="skill-tag">FastAPI</span>-эндпоинты</li>
+                    <li>Развёртывание на GPU: CUDA</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-label">Разработка</div>
+                <ul>
+                    <li><b>Python</b>: FastAPI, asyncio, anyio, pandas, Polars, Panel, JupyterHub</li>
+                    <li><b>JavaScript</b>: Node.js, npm-экосистема</li>
+                    <li><b>SQL</b>: PostgreSQL, Oracle PL/SQL, оптимизация запросов</li>
+                    <li><b>Mobile</b>: Flutter</li>
+                    <li><b>GameDev</b>: Unity</li>
+                    <li><b>Blockchain</b>: смарт-контракты на <span class="skill-tag">Solidity</span> (EVM)</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-label">Инфраструктура</div>
+                <ul>
+                    <li>Docker, Linux, Git, CI/CD</li>
+                    <li>Apache Airflow: оркестрация ETL/ELT пайплайнов</li>
+                    <li>Проектирование DWH, архитектура данных</li>
+                </ul>
+            </div>
+            <div class="skill-card skill-card-wide">
+                <div class="skill-card-label">Актуарная аналитика и финансы</div>
+                <ul>
+                    <li>IFRS 17 (GMM, PAA): проектирование расчётных модулей, автоматизация отчётности</li>
+                    <li>Актуарное моделирование: <span class="skill-tag">chainladder</span> — резервы, прогнозы, треугольники развития</li>
+                    <li>Финансовые расчёты, форвардные ставки, инвестиционный анализ</li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <p class="profile">
-    Инженер с 20+ летним опытом в проектировании и автоматизации вычислительных систем.
-    В последние годы работаю на стыке разработки и машинного обучения: проектирую AI-сервисы,
-    строю мультиагентные системы, разворачиваю ML-модели в продакшен.
-    Привык вести проект целиком — от анализа задачи до эксплуатации в рабочей среде.
-  </p>
+    <!-- AI/ML ПРОЕКТЫ -->
+    <div class="section">
+        <h2 class="section-title">Проектный опыт в AI / ML</h2>
 
-  <!-- НАВЫКИ -->
-  <div class="section">
-    <h2 class="section-title">Навыки</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-card-label">AI и языковые модели</div>
-        <ul>
-          <li>Мультиагентные системы: оркестрация, tool use, управление контекстом и ограничениями моделей</li>
-          <li>Коммерческие API (<span class="skill-tag">OpenAI</span> <span class="skill-tag">Anthropic</span>) для сложных задач; локальный инференс через <span class="skill-tag">Ollama</span> и <span class="skill-tag">HuggingFace</span> — для экономии и задач с требованиями к конфиденциальности</li>
-          <li>Agentic RAG на <span class="skill-tag">smolagents</span>, векторный поиск, prompt engineering</li>
-          <li>Интеграция через <span class="skill-tag">LiteLLM</span> — единый интерфейс к разным провайдерам</li>
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-title">Мультиагентная система на базе LLM</span>
+                <span class="exp-period">2024 — н.в.</span>
+            </div>
+            <ul class="exp-list">
+                <li>Спроектировал архитектуру с несколькими агентами (ToolCallingAgent + CodeAgent) на smolagents и LiteLLM</li>
+                <li>Подключил различные LLM-провайдеры: OpenAI, Anthropic, Ollama (Qwen, DeepSeek)</li>
+                <li>Реализовал взаимодействие агентов с пользователем через структурированные инструменты</li>
+                <li>Обеспечил асинхронное выполнение (asyncio, anyio) для работы под нагрузкой</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-title">Speech-to-Text (ASR) и голосовой AI-пайплайн</span>
+                <span class="exp-period">2024 — н.в.</span>
+            </div>
+            <ul class="exp-list">
+                <li>Построил REST API на FastAPI с моделью faster-whisper (large-v3), GPU-инференс (CUDA)</li>
+                <li>VAD-фильтрация, мультиязычная транскрибация, контейнеризация через Docker</li>
+                <li>Интегрировал ASR и TTS-сервисы с Telegram через <b>telethon</b> — приём, AI-обработка и генерация голосовых сообщений</li>
+                <li>AI-генерация ответов осуществлена средствами Tools из <b>smolagents</b>: агент анализирует сообщение/вопрос и, используя инструменты (может
+                    задать уточняющие вопросы), формирует окончательный ответ
+                </li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-title">Актуарное хранилище данных и IFRS 17</span>
+                <span class="exp-period">2020 — н.в.</span>
+            </div>
+            <ul class="exp-list">
+                <li>Построил data pipeline на Apache Airflow + PostgreSQL для расчётов страховых обязательств</li>
+                <li>Разработал модули IFRS 17 (GMM, PAA) на Python, JupyterHub как окружение актуария</li>
+                <li>Оптимизировал SQL-запросы и PL/SQL-процедуры для финансовых данных</li>
+                <li>Создал интерактивные дашборды на Panel</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Профессиональный опыт</h2>
+
+        <!-- ОПЫТ -->
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-title">АО «Цесна Гарант»</span>
+                <span class="exp-period">2011 — 2013</span>
+            </div>
+            <ul class="exp-list">
+                <li>Автоматизация процессов, внедрение ISO, подготовка к рейтингу S&P</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-title">АО «Нефтяная страховая компания»</span>
+                <span class="exp-period">2001 — 2008</span>
+            </div>
+            <ul class="exp-list">
+                <li>Актуарные расчёты, автоматизация бизнес-процессов</li>
+                <li>Концепция и управление разработкой Единой страховой базы данных (ЕСБД) — 2007</li>
+                <li>Расчёт тарифов для рынка, защита в Парламенте — 2006</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ОБРАЗОВАНИЕ -->
+    <div class="section">
+        <h2 class="section-title">Образование</h2>
+        <div class="edu-block">
+            <p class="edu-name">Российская экономическая академия им. Г. В. Плеханова</p>
+            <p class="edu-detail">Специальность — Маркетинг</p>
+        </div>
+    </div>
+
+    <!-- ЛИЦЕНЗИИ -->
+    <div class="section">
+        <h2 class="section-title">Лицензии и членство</h2>
+        <ul class="license-list">
+            <li>Лицензия актуария Национального банка Республики Казахстан №10</li>
+            <li>Действительный член Общества актуариев Казахстана (IAA)</li>
         </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-label">ML и обработка речи</div>
-        <ul>
-          <li>ASR: <span class="skill-tag">faster-whisper</span>, VAD-фильтрация, мультиязычная транскрибация</li>
-          <li>TTS с клонированием голоса по образцу</li>
-          <li>Собственный мульти-GPU сервер для инференса; все модели обёрнуты в <span class="skill-tag">FastAPI</span>-эндпоинты</li>
-          <li>Развёртывание на GPU: CUDA</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-label">Разработка</div>
-        <ul>
-          <li><b>Python</b>: FastAPI, asyncio, anyio, pandas, Polars, Panel, JupyterHub</li>
-          <li><b>JavaScript</b>: Node.js, npm-экосистема</li>
-          <li><b>SQL</b>: PostgreSQL, Oracle PL/SQL, оптимизация запросов</li>
-          <li><b>Mobile</b>: Flutter</li>
-          <li><b>GameDev</b>: Unity</li>
-          <li><b>Blockchain</b>: смарт-контракты на <span class="skill-tag">Solidity</span> (EVM)</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-label">Инфраструктура</div>
-        <ul>
-          <li>Docker, Linux, Git, CI/CD</li>
-          <li>Apache Airflow: оркестрация ETL/ELT пайплайнов</li>
-          <li>Проектирование DWH, архитектура данных</li>
-        </ul>
-      </div>
-      <div class="skill-card skill-card-wide">
-        <div class="skill-card-label">Актуарная аналитика и финансы</div>
-        <ul>
-          <li>IFRS 17 (GMM, PAA): проектирование расчётных модулей, автоматизация отчётности</li>
-          <li>Актуарное моделирование: <span class="skill-tag">chainladder</span> — резервы, прогнозы, треугольники развития</li>
-          <li>Финансовые расчёты, форвардные ставки, инвестиционный анализ</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- AI/ML ПРОЕКТЫ -->
-  <div class="section">
-    <h2 class="section-title">Проектный опыт в AI / ML</h2>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-title">Мультиагентная система на базе LLM</span>
-        <span class="exp-period">2024 — н.в.</span>
-      </div>
-      <ul class="exp-list">
-        <li>Спроектировал архитектуру с несколькими агентами (ToolCallingAgent + CodeAgent) на smolagents и LiteLLM</li>
-        <li>Подключил различные LLM-провайдеры: OpenAI, Anthropic, Ollama (Qwen, DeepSeek)</li>
-        <li>Реализовал взаимодействие агентов с пользователем через структурированные инструменты</li>
-        <li>Обеспечил асинхронное выполнение (asyncio, anyio) для работы под нагрузкой</li>
-      </ul>
     </div>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-title">Speech-to-Text (ASR) и голосовой AI-пайплайн</span>
-        <span class="exp-period">2024 — н.в.</span>
-      </div>
-      <ul class="exp-list">
-        <li>Построил REST API на FastAPI с моделью faster-whisper (large-v3), GPU-инференс (CUDA)</li>
-        <li>VAD-фильтрация, мультиязычная транскрибация, контейнеризация через Docker</li>
-        <li>Интегрировал ASR и TTS-сервисы с Telegram через <b>telethon</b> — приём, AI-обработка и генерация голосовых сообщений</li>
-        <li>AI-генерация ответов осуществлена средствами Tools из <b>smolagents</b>: агент анализирует сообщение/вопрос и, используя инструменты (может задать уточняющие вопросы), формирует окончательный ответ</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-title">Актуарное хранилище данных и IFRS 17</span>
-        <span class="exp-period">2020 — н.в.</span>
-      </div>
-      <ul class="exp-list">
-        <li>Построил data pipeline на Apache Airflow + PostgreSQL для расчётов страховых обязательств</li>
-        <li>Разработал модули IFRS 17 (GMM, PAA) на Python, JupyterHub как окружение актуария</li>
-        <li>Оптимизировал SQL-запросы и PL/SQL-процедуры для финансовых данных</li>
-        <li>Создал интерактивные дашборды на Panel</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ОПЫТ -->
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-title">АО «Цесна Гарант»</span>
-        <span class="exp-period">2011 — 2013</span>
-      </div>
-      <ul class="exp-list">
-        <li>Автоматизация процессов, внедрение ISO, подготовка к рейтингу S&P</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-title">АО «Нефтяная страховая компания»</span>
-        <span class="exp-period">2001 — 2008</span>
-      </div>
-      <ul class="exp-list">
-        <li>Актуарные расчёты, автоматизация бизнес-процессов</li>
-        <li>Концепция и управление разработкой Единой страховой базы данных (ЕСБД) — 2007</li>
-        <li>Расчёт тарифов для рынка, защита в Парламенте — 2006</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ОБРАЗОВАНИЕ -->
-  <div class="section">
-    <h2 class="section-title">Образование</h2>
-    <div class="edu-block">
-      <p class="edu-name">Российская экономическая академия им. Г. В. Плеханова</p>
-      <p class="edu-detail">Специальность — Маркетинг</p>
-    </div>
-  </div>
-
-  <!-- ЛИЦЕНЗИИ -->
-  <div class="section">
-    <h2 class="section-title">Лицензии и членство</h2>
-    <ul class="license-list">
-      <li>Лицензия актуария Национального банка Республики Казахстан №10</li>
-      <li>Действительный член Общества актуариев Казахстана (IAA)</li>
-    </ul>
-  </div>
-
-  <div class="cv-footer">/// 2025 — SHEVCHENKO.V ///</div>
+    <div class="cv-footer">/// 2025 — SHEVCHENKO.V ///</div>
 
 </div>
 
 <script>
-  const formulas = [
-    'P(Ω) = 1',                        // Axiom 1
-    '0 ≤ P(A) ≤ 1',                    // Axiom 2
-    'P(Aᶜ) = 1 − P(A)',                // Complement rule
-    'P(A ∪ B) = P(A) + P(B) − P(A ∩ B)', // Addition rule
-    'P(A | B) = P(A ∩ B) / P(B)',      // Conditional probability
-    'P(A ∩ B) = P(A)P(B)',             // Independence
-    'P(B | A) = P(A | B)P(B) / P(A)',  // Bayes Theorem
-    'P(A) = Σ P(A | Bᵢ)P(Bᵢ)',         // Law of Total Probability
-    'F(x) = P(X ≤ x)',                 // CDF definition
-    'f(x) = dF(x)/dx',                 // PDF from CDF
-    '∫₋∞⁺∞ f(x) dx = 1',               // PDF integration
-    'E[X] = Σ xᵢ p(xᵢ)',               // Expectation (Discrete)
-    'E[X] = ∫ x f(x) dx',              // Expectation (Continuous)
-    'E[g(X)] = ∫ g(x) f(x) dx',        // LOTUS
-    'E[aX + b] = aE[X] + b',           // Linearity of Expectation
-    'Var(X) = E[(X − μ)²]',            // Variance definition
-    'Var(X) = E[X²] − (E[X])²',        // Variance shortcut
-    'σ = √Var(X)',                     // Standard Deviation
-    'Cov(X,Y) = E[XY] − E[X]E[Y]',     // Covariance
-    'ρ = Cov(X,Y) / (σₓσᵧ)',           // Correlation Coefficient
-    'Var(X ± Y) = Var(X) + Var(Y)',    // Variance sum (if independent)
-    'P(X=k) = C(n,k) pᵏ (1−p)ⁿ⁻ᵏ',     // Binomial Distribution
-    'P(X=k) = e⁻λ λᵏ / k!',            // Poisson Distribution
-    'X ∼ N(μ, σ²)',                    // Normal Distribution notation
-    'f(x) = (1/σ√2π) e⁻⁽ˣ⁻μ⁾²/²σ²',    // Normal PDF (simplified unicode)
-    'Z = (X − μ) / σ',                 // Z-score standardization
-    'P(X ≥ a) ≤ E[X] / a',             // Markov's Inequality
-    'P(|X − μ| ≥ kσ) ≤ 1/k²',          // Chebyshev's Inequality
-    'Mₓ(t) = E[eᵗˣ]',                  // Moment Generating Function
-    'X̄ₙ → μ',                          // Law of Large Numbers
-    '√n(X̄ₙ − μ) → N(0, σ²)',           // Central Limit Theorem
-    'L(θ) = Π f(xᵢ; θ)',               // Likelihood Function
-    'l(θ) = Σ log f(xᵢ; θ)',           // Log-Likelihood
-    'H(X) = −Σ p(x) log p(x)',         // Entropy
-    'KL(P ‖ Q) = Σ P(x) log(P(x)/Q(x))', // Kullback-Leibler Divergence
-    'S² = Σ (Xᵢ − X̄)² / (n − 1)',      // Sample Variance (Unbiased)
-    'SE = σ / √n',                     // Standard Error
-    'Q(p) = inf{x : p ≤ F(x)}',        // Quantile Function
-    'lim P(|Xₙ − X| > ε) = 0',         // Convergence in Probability
-  ];
+    const formulas = [
+        'P(Ω) = 1',                        // Axiom 1
+        '0 ≤ P(A) ≤ 1',                    // Axiom 2
+        'P(Aᶜ) = 1 − P(A)',                // Complement rule
+        'P(A ∪ B) = P(A) + P(B) − P(A ∩ B)', // Addition rule
+        'P(A | B) = P(A ∩ B) / P(B)',      // Conditional probability
+        'P(A ∩ B) = P(A)P(B)',             // Independence
+        'P(B | A) = P(A | B)P(B) / P(A)',  // Bayes Theorem
+        'P(A) = Σ P(A | Bᵢ)P(Bᵢ)',         // Law of Total Probability
+        'F(x) = P(X ≤ x)',                 // CDF definition
+        'f(x) = dF(x)/dx',                 // PDF from CDF
+        '∫₋∞⁺∞ f(x) dx = 1',               // PDF integration
+        'E[X] = Σ xᵢ p(xᵢ)',               // Expectation (Discrete)
+        'E[X] = ∫ x f(x) dx',              // Expectation (Continuous)
+        'E[g(X)] = ∫ g(x) f(x) dx',        // LOTUS
+        'E[aX + b] = aE[X] + b',           // Linearity of Expectation
+        'Var(X) = E[(X − μ)²]',            // Variance definition
+        'Var(X) = E[X²] − (E[X])²',        // Variance shortcut
+        'σ = √Var(X)',                     // Standard Deviation
+        'Cov(X,Y) = E[XY] − E[X]E[Y]',     // Covariance
+        'ρ = Cov(X,Y) / (σₓσᵧ)',           // Correlation Coefficient
+        'Var(X ± Y) = Var(X) + Var(Y)',    // Variance sum (if independent)
+        'P(X=k) = C(n,k) pᵏ (1−p)ⁿ⁻ᵏ',     // Binomial Distribution
+        'P(X=k) = e⁻λ λᵏ / k!',            // Poisson Distribution
+        'X ∼ N(μ, σ²)',                    // Normal Distribution notation
+        'f(x) = (1/σ√2π) e⁻⁽ˣ⁻μ⁾²/²σ²',    // Normal PDF (simplified unicode)
+        'Z = (X − μ) / σ',                 // Z-score standardization
+        'P(X ≥ a) ≤ E[X] / a',             // Markov's Inequality
+        'P(|X − μ| ≥ kσ) ≤ 1/k²',          // Chebyshev's Inequality
+        'Mₓ(t) = E[eᵗˣ]',                  // Moment Generating Function
+        'X̄ₙ → μ',                          // Law of Large Numbers
+        '√n(X̄ₙ − μ) → N(0, σ²)',           // Central Limit Theorem
+        'L(θ) = Π f(xᵢ; θ)',               // Likelihood Function
+        'l(θ) = Σ log f(xᵢ; θ)',           // Log-Likelihood
+        'H(X) = −Σ p(x) log p(x)',         // Entropy
+        'KL(P ‖ Q) = Σ P(x) log(P(x)/Q(x))', // Kullback-Leibler Divergence
+        'S² = Σ (Xᵢ − X̄)² / (n − 1)',      // Sample Variance (Unbiased)
+        'SE = σ / √n',                     // Standard Error
+        'Q(p) = inf{x : p ≤ F(x)}',        // Quantile Function
+        'lim P(|Xₙ − X| > ε) = 0',         // Convergence in Probability
+    ];
 
-  const canvas = document.getElementById('formulasCanvas');
-  const COUNT = 36;
-  const colors = ['cyan-f', 'magenta-f', 'green-f'];
-  const usedFormulas = new Set();
+    const canvas = document.getElementById('formulasCanvas');
+    const COUNT = 36;
+    const colors = ['cyan-f', 'magenta-f', 'green-f'];
+    const usedFormulas = new Set();
 
-  function pickFormula() {
-    if (usedFormulas.size >= formulas.length) usedFormulas.clear();
-    let f;
-    do { f = formulas[Math.floor(Math.random() * formulas.length)]; } while (usedFormulas.has(f));
-    usedFormulas.add(f);
-    return f;
-  }
+    function pickFormula() {
+        if (usedFormulas.size >= formulas.length) usedFormulas.clear();
+        let f;
+        do {
+            f = formulas[Math.floor(Math.random() * formulas.length)];
+        } while (usedFormulas.has(f));
+        usedFormulas.add(f);
+        return f;
+    }
 
-  function spawnFormula(immediate) {
-    const el = document.createElement('span');
-    const colorClass = colors[Math.floor(Math.random() * colors.length)];
-    el.className = 'formula ' + colorClass;
-    el.textContent = pickFormula();
+    function spawnFormula(immediate) {
+        const el = document.createElement('span');
+        const colorClass = colors[Math.floor(Math.random() * colors.length)];
+        el.className = 'formula ' + colorClass;
+        el.textContent = pickFormula();
 
-    const size = 12 + Math.random() * 18;
-    const left = Math.random() * 100;
-    const duration = 18 + Math.random() * 35;
-    const delay = immediate ? -(Math.random() * duration) : 0;
-    const rotStart = -10 + Math.random() * 20;
-    const rotEnd = rotStart + (-5 + Math.random() * 10);
-    const driftX = -40 + Math.random() * 80;
+        const size = 12 + Math.random() * 18;
+        const left = Math.random() * 100;
+        const duration = 18 + Math.random() * 35;
+        const delay = immediate ? -(Math.random() * duration) : 0;
+        const rotStart = -10 + Math.random() * 20;
+        const rotEnd = rotStart + (-5 + Math.random() * 10);
+        const driftX = -40 + Math.random() * 80;
 
-    el.style.cssText = `
+        el.style.cssText = `
       font-size: ${size}px;
       left: ${left}%;
       bottom: -80px;
@@ -779,16 +908,16 @@
       animation-delay: ${delay}s;
     `;
 
-    canvas.appendChild(el);
+        canvas.appendChild(el);
 
-    const totalTime = (duration + delay) * 1000;
-    setTimeout(() => {
-      el.remove();
-      spawnFormula(false);
-    }, totalTime > 0 ? totalTime : duration * 1000);
-  }
+        const totalTime = (duration + delay) * 1000;
+        setTimeout(() => {
+            el.remove();
+            spawnFormula(false);
+        }, totalTime > 0 ? totalTime : duration * 1000);
+    }
 
-  for (let i = 0; i < COUNT; i++) spawnFormula(true);
+    for (let i = 0; i < COUNT; i++) spawnFormula(true);
 </script>
 
 </body>
